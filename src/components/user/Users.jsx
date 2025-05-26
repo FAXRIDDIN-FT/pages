@@ -11,60 +11,56 @@ const Users = () => {
     setLoading(true)
     axios
       .get("https://dummyjson.com/users")
-      .then(us => {
-        setUsers(us.data)
-      })
-      .catch((err) => {
-        setError(err)
-      })
+      .then(res => setUsers(res.data))
+      .catch(err => setError(err))
       .finally(() => setLoading(false))
   }, [])
 
   if (error) {
     return (
-      <div className='text-center text-red-700 mt-10 text-lg font-semibold'>
-        <p>Something went wrong. Please try again.</p>
+      <div className='text-center text-red-500 mt-10 text-lg font-semibold'>
+        Something went wrong. Please try again.
       </div>
     )
   }
 
   return (
-    <div className='min-h-screen py-10 px-4 bg-[#0e0d1e]'>
-      <h2 className='max-w-[1440px] mx-auto text-start text-3xl font-bold mb-10 text-white'>
-        👤 User Profiles
-      </h2>
+    <div className='min-h-screen py-10 px-6 bg-[#0b0b17]'>
+      <h2 className='text-white text-4xl font-bold text-center mb-12'>User Profiles</h2>
 
-      <div className='max-w-[1440px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
+      <div className='max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10'>
         {users?.users?.map((user) => (
           <div
             key={user.id}
-            className='bg-[#1d1b2a] border border-[#333348] rounded-2xl p-6 shadow-xl text-white flex flex-col items-center transition-transform hover:-translate-y-1 hover:shadow-2xl duration-300'
+            className='bg-[#161621] rounded-xl p-6 text-white shadow-md hover:shadow-xl transition duration-300'
           >
-            <div className='relative w-28 h-28 mb-4'>
-              <img
-                src={user.image}
-                alt={user.firstName}
-                className='w-full h-full rounded-full object-cover border-4 border-cyan-400 shadow-lg transition-transform duration-500 hover:scale-105'
-              />
-              <div className='absolute top-0 right-0 w-4 h-4 bg-green-400 rounded-full border-2 border-[#1d1b2a]'></div>
+            <div className='flex items-center gap-5 mb-5'>
+              <div className='relative w-20 h-20'>
+                <img
+                  src={user.image}
+                  alt={user.firstName}
+                  className='w-full h-full object-cover rounded-full border-2 border-indigo-500'
+                />
+                <span className='absolute bottom-0 right-0 w-4 h-4 bg-green-400 border-2 border-[#161621] rounded-full animate-ping'></span>
+                <span className='absolute bottom-0 right-0 w-4 h-4 bg-green-400 border-2 border-[#161621] rounded-full'></span>
+              </div>
+              <div>
+                <h3 className='text-2xl font-semibold text-cyan-400'>{user.firstName} {user.lastName}</h3>
+                <p className='text-sm text-gray-400'>{user.company?.title || 'Developer'}</p>
+              </div>
             </div>
 
-            <h3 className='text-xl font-bold text-cyan-300'>
-              {user.firstName} {user.lastName}
-            </h3>
-            <p className='text-sm text-gray-300'>{user.company?.title || 'Frontend Developer'}</p>
-
-            <div className='text-sm text-gray-300 text-center mt-4 space-y-1'>
-              <p><strong className='text-white'>📧 Email:</strong> {user.email}</p>
-              <p><strong className='text-white'>📱 Phone:</strong> {user.phone}</p>
-              <p><strong className='text-white'>📍 Location:</strong> {user.address?.city || 'Tashkent'}</p>
+            <div className='text-gray-300 text-sm space-y-1 pl-1'>
+              <p>📧 <span className='text-white'>{user.email}</span></p>
+              <p>📱 <span className='text-white'>{user.phone}</span></p>
+              <p>📍 <span className='text-white'>{user.address?.city || 'Tashkent'}</span></p>
             </div>
 
-            <div className='mt-6 flex gap-3 w-full justify-center'>
-              <button className='px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white text-sm font-medium rounded-lg hover:brightness-110 transition'>
+            <div className='mt-6 flex justify-between gap-4'>
+              <button className='w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-md transition'>
                 Edit
               </button>
-              <button className='px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white text-sm font-medium rounded-lg transition'>
+              <button className='w-full bg-gray-700 hover:bg-gray-600 text-white py-2 rounded-md transition'>
                 Message
               </button>
             </div>
@@ -78,4 +74,3 @@ const Users = () => {
 }
 
 export default Users
-    
