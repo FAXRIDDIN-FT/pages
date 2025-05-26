@@ -6,36 +6,50 @@ const Login = () => {
   return (
     <>
     
-      <div className="flex justify-center flex-col items-center min-h-screen bg-black">
-        <div className="bg-gray-900 shadow-lg rounded-xl p-8 w-full max-w-sm">
-          <h2 className="text-2xl font-bold text-center mb-6 text-white">Login</h2>
+ <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-indigo-100 via-white to-purple-100 px-4">
+  <div className="bg-white shadow-xl rounded-2xl p-10 w-full max-w-md border border-gray-200">
+    <h2 className="text-3xl font-extrabold text-center mb-8 text-indigo-700 tracking-wide">Welcome Back</h2>
 
-          <form className="flex flex-col gap-4">
-            <div>
-              <label className="block text-sm text-gray-300 mb-1">Email</label>
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full px-4 py-2 border border-gray-700 bg-black text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400"
-                required
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm text-gray-300 mb-1">Password</label>
-              <input type="password" placeholder="Enter your password"
-                className="w-full px-4 py-2 border border-gray-700 bg-black text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400"
-                required
-              />
-            </div>
-
-            <button type="submit" className="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2 rounded-lg transition">
-              Login
-            </button>
-          </form>
-        </div>
-         <button onClick={() => navigate("/") } className=' text-white text-center text-2xl '>   Go Home</button>
+    <form className="flex flex-col gap-6">
+      <div>
+        <label className="block text-sm font-medium text-gray-600 mb-1">Email Address</label>
+        <input
+          type="email"
+          placeholder="you@example.com"
+          className="w-full px-4 py-3 border border-gray-300 bg-indigo-50 text-gray-800 placeholder-gray-500 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-400 transition duration-200"
+          required
+        />
       </div>
+
+      <div>
+        <label className="block text-sm font-medium text-gray-600 mb-1">Password</label>
+        <input
+          type="password"
+          placeholder="••••••••"
+          className="w-full px-4 py-3 border border-gray-300 bg-indigo-50 text-gray-800 placeholder-gray-500 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-400 transition duration-200"
+          required
+        />
+      </div>
+
+      <button
+        type="submit"
+        className="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-3 rounded-xl transition duration-300 shadow-md hover:shadow-indigo-300"
+      >
+        Login
+      </button>
+    </form>
+
+    <div className="mt-6 text-center">
+      <button
+        onClick={() => navigate("/")}
+        className="text-indigo-600 hover:text-indigo-500 transition text-lg font-medium"
+      >
+        ← Back to Home
+      </button>
+    </div>
+  </div>
+</div>
+
     </>
   )
 }

@@ -1,12 +1,11 @@
-import React from 'react'
-import Product from '../../components/product/Product'
+import Products from "../../components/products/Products";
 
-const Home = () => {
+const Home = ({ loading, product }) => {
   return (
     <div>
-     <Product/>
+      <Products loading={loading} product={product} />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

@@ -1,10 +1,13 @@
-import React from 'react'
-import Recipes from '../../components/recipe/recipes'
+import Recipes from '../../components/recipes/recipes'
 
-const Recipe = () => {
+const Recipe = ({recipes, error, loading}) => {
+  if(!recipes) {
+    return <div>...</div>
+  }
+  console.log(recipes)
   return (
     <div>
-      <Recipes/>
+      <Recipes recipes={recipes} error={error} loading={loading}/>
     </div>
   )
 }

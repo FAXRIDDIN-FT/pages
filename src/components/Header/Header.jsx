@@ -1,47 +1,70 @@
-import React from 'react'
-import {Link, NavLink } from 'react-router-dom'
-import { FaHome, FaUserAlt, FaUtensils, FaPenAlt,FaBars  } from 'react-icons/fa'
-import { AiOutlineLogin } from 'react-icons/ai'
-import { BiLogoReact } from 'react-icons/bi'
+import React from "react";
+import { Link, NavLink } from "react-router-dom";
+import {
+  FaHome,
+  FaUserAlt,
+  FaUtensils,
+  FaPenAlt,
+  FaBars,
+} from "react-icons/fa";
+import { AiOutlineLogin } from "react-icons/ai";
+import { BiLogoReact } from "react-icons/bi";
 
 const Header = () => {
   return (
-    <header className="bg-gray-900 text-white shadow-md">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 ">
-        <div className="flex items-center gap-2 text-xl font-bold">
-          <BiLogoReact className="text-cyan-400 text-3xl animate-spin" />
-         <Link to={"/"}>
-           <span>MyApp</span>
-         </Link>
+    <header className="text-white  shadow-md">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4   rounded-b-2xl">
+        <div className="flex items-center gap-2 text-[28px] font-extrabold text-indigo-700">
+          <Link to="/">
+            <h1>Online Market</h1>
+          </Link>
         </div>
-        <nav className="flex gap-6 text-white text-sm md:text-base max-[600px]:hidden ">
-          <NavLink to="/" className="flex items-center gap-1 hover:text-cyan-400 transition" >
-            <FaHome /> Home
+
+        <nav className="hidden md:flex gap-6 text-indigo-700 font-medium">
+          <NavLink
+            to="/"
+            className="flex items-center gap-2 hover:text-indigo-500 transition duration-200"
+          >
+            Home
           </NavLink>
 
-          <NavLink to="/user" className="flex items-center gap-1 hover:text-cyan-400 transition" >
-            <FaUserAlt /> User
+          <NavLink
+            to="/recipe"
+            className="flex items-center gap-2 hover:text-indigo-500 transition duration-200"
+          >
+            Recipe
           </NavLink>
 
-          <NavLink to="/recipe" className="flex items-center gap-1 hover:text-cyan-400 transition" >
-            <FaUtensils /> Recipe
+          <NavLink
+            to="/post"
+            className="flex items-center gap-2 hover:text-indigo-500 transition duration-200"
+          >
+            Post
           </NavLink>
 
-          <NavLink to="/post" className="flex items-center gap-1 hover:text-cyan-400 transition" >
-            <FaPenAlt /> Post
+          <NavLink
+            to="/user"
+            className="flex items-center gap-2 hover:text-indigo-500 transition duration-200"
+          >
+            User
           </NavLink>
 
-
-          <NavLink to="/Login" className="flex items-center gap-1 hover:text-cyan-400 transition" >
-            <AiOutlineLogin /> Login
+          <NavLink
+            to="/Login"
+            className="flex items-center gap-1 hover:text-violet-600 transition duration-200"
+          >
+       
+            Login
           </NavLink>
         </nav>
-          <div className="hidden text-2xl cursor-pointer max-[600px]:block" >
-            <FaBars />
-          </div>
+
+        
+        <div className="text-indigo-700 text-2xl cursor-pointer md:hidden">
+          <FaBars />
+        </div>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
