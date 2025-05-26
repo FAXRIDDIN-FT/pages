@@ -6,7 +6,7 @@ import Post from "./pages/Post/Post";
 import Login from "./pages/Login/Login";
 import Layout from "./pages/Layout/Layout";
 import { Route, Routes } from "react-router-dom";
-import NotFound from "./pages/not-found/NotFound";
+import NotFound from "./pages/NotFount/NotFound";
 import axios from "axios";
 import ProductDetail from "./components/productDetails/ProductDetails";
 import RicepesDetails from "./components/RicepesDetails/RicepesDetails";
