@@ -35,13 +35,7 @@ const Header = () => {
         Recipe
       </NavLink>
 
-      <NavLink
-        to="/post"
-        className="hover:text-indigo-500 transition duration-200"
-      >
-        Post
-      </NavLink>
-
+   
       <NavLink
         to="/user"
         className="hover:text-indigo-500 transition duration-200"

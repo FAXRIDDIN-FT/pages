@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Home from "./pages/Home/Home";
 import User from "./pages/user/User";
 import Recipe from "./pages/Recipe/Recipe";
-import Post from "./pages/Post/Post";
+
 import Login from "./pages/Login/Login";
 import Layout from "./pages/Layout/Layout";
 import { Route, Routes } from "react-router-dom";
@@ -46,7 +46,7 @@ const App = () => {
           />
           <Route path="/user" element={<User />} />
           <Route path="/recipe" element={<Recipe recipes={recipes} error={error} loading={loading}/>} />
-          <Route path="/Post" element={<Post />} />
+        
           <Route path="*" element={<NotFound />} />
           <Route path="/product/:id" element={<ProductDetail product={product} />} />
           <Route path="/recipes/:id" element ={<RicepesDetails recipes={recipes}/>}/>
